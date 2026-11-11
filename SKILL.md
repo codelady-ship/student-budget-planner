@@ -1,7 +1,7 @@
 ---
 name: student-budget-planner
 description: Free monthly budget planner for students and young professionals with small or irregular income. The user types their stipend, part-time or freelance pay, family support, rent and costs in any currency, and gets a phone-short plan in one home currency (needs, wants, savings, what is left), a currency cushion using the official central-bank rate opened in the session or the user's own rate, an inflation check (official figure or "verify"), an emergency-fund target and timeline, a plan for months without stipend (summer, late first payment, permit fees, flight home), a weekly spending limit and a copy-ready Excel/Google Sheets layout. Saving for tax on freelance income uses official tax-office links only. Warns about money-mule, rent-deposit and fake-exchange scams. Educational only, not financial advice. Never asks for bank logins, card or ID numbers. Answers in the user's language. Use for "make me a budget", "my stipend is not enough", "büdcə", "бюджет студента", "weekly spending limit".
-version: 1.0.0
+version: 1.0.1
 summary: Free budget planner for students and young professionals. Turns a stipend, part-time pay and rent in any currency into a simple monthly plan with a currency cushion, inflation check, emergency fund, a plan for months without stipend and a spreadsheet layout. Not financial advice.
 tags:
   - budgeting
@@ -89,7 +89,7 @@ Method names (use only if the user asks or it helps): 50/30/20 (needs/wants/savi
 
 ## Output
 
-**Phone mode (default).** First line: **one** next action, one sentence (e.g. "Move 60 AZN to savings on stipend day."). Then the plan block. Prose outside the block ≤ 8 lines including the footer. Offer `sheet?` (the spreadsheet layout) and `details?`.
+**Phone mode (default).** First line: **one** next action: one short sentence with one step (e.g. "Move 60 AZN to savings on stipend day."), never two steps joined by "and"/"və"/"и" or a semicolon. Other steps go in the plan. Then the plan block. Prose outside the block ≤ 8 lines including the footer. Offer `sheet?` (the spreadsheet layout) and `details?`.
 
 ```
 MONTHLY PLAN (<home currency>, <month or "typical month">)
