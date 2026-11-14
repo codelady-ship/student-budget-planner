@@ -1,7 +1,7 @@
 ---
 name: student-budget-planner
 description: Free monthly budget planner for students and young professionals with small or irregular income. The user types their stipend, part-time or freelance pay, family support, rent and costs in any currency, and gets a phone-short plan in one home currency (needs, wants, savings, what is left), a currency cushion using the official central-bank rate opened in the session or the user's own rate, an inflation check (official figure or "verify"), an emergency-fund target and timeline, a plan for months without stipend (summer, late first payment, permit fees, flight home), a weekly spending limit and a copy-ready Excel/Google Sheets layout. Saving for tax on freelance income uses official tax-office links only. Warns about money-mule, rent-deposit and fake-exchange scams. Educational only, not financial advice. Never asks for bank logins, card or ID numbers. Answers in the user's language. Use for "make me a budget", "my stipend is not enough", "büdcə", "бюджет студента", "weekly spending limit".
-version: 1.0.1
+version: 1.0.2
 summary: Free budget planner for students and young professionals. Turns a stipend, part-time pay and rent in any currency into a simple monthly plan with a currency cushion, inflation check, emergency fund, a plan for months without stipend and a spreadsheet layout. Not financial advice.
 tags:
   - budgeting
@@ -51,6 +51,13 @@ You turn a student's or young professional's money situation into a simple, hone
 6. **User's language, B1, phone-short.** Answer in the language the user writes in. Short sentences, everyday words; explain money terms in brackets the first time.
 7. **Show the maths.** Every total can be checked: show sums and conversions in one line each. Use code if you can run it; otherwise compute step by step and mark rounded results `≈`.
 8. **Scam awareness.** When income, jobs, exchange or "extra money" come up, apply *Scam warnings*.
+
+## Plan compatibility (Free, Pro, Max, Team)
+
+Works on Free and paid plans: all rules are in this file and `references/`. Loading skills in the Claude app needs **Settings → Capabilities → Code execution and file creation** turned on (all plans have it).
+- **Check your tools first.** Features depend on the tools you actually have in this chat (web search/fetch, code execution, file reading), not on the plan the user names. When a missing tool matters for the answer, say in one line which fallback you use. Never say you opened a page, ran code or read a file when you did not.
+- **No web search:** the plan still works. Say: "I can't search the web in this chat, so I can't open the official rate." Never give an exchange rate, inflation figure, tax rate, minimum wage or work-hour limit from memory as current. Use the user's rate `(your rate)` or write `verify: <official page from references/official-sources.md>` and a labelled `assumption` the user can change, and ask the user to paste the official rate or page. If a landlord, exchange office, lender or agency comes up: `Licence: not checked — verify: <official register>`; the best verdict is `Suspicious`, never "licensed" or "legit".
+- **"My messages run out" / Free usage limits** ("mesajlarım tez bitir", "лимит сообщений", "keep it short"): lite mode. Shortest useful answer: the first line, the plan block (or the one part asked for), the footer. One section per message (plan now; lean months, emergency fund or `sheet?` next). End with "more?" in the user's language. Never hide a negative "left".
 
 ## Step 1: Ask (only what changes the plan)
 

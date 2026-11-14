@@ -70,6 +70,32 @@
         "Mentions checking licences on the official regulator register (e.g. Central Bank of Azerbaijan) and scam patterns like 'fast growth' promises",
         "Short; footer present"
       ]
+    },
+    {
+      "id": 7,
+      "setup": "The assistant has no web search and no web fetch in this chat.",
+      "prompt": "Я студентка в Будапеште. Стипендия 130 000 HUF в месяц, родители присылают 200 AZN. Аренда 90 000 HUF. Какой сейчас курс AZN к HUF и какая инфляция в Венгрии? Составь бюджет. И ещё: парень в Telegram меняет AZN на HUF выгоднее банка, говорит, что у него лицензированный обменник. Это нормально?",
+      "expectations": [
+        "Entire answer in Russian",
+        "Says it can't search the web / open the official rate in this chat",
+        "Gives no current AZN/HUF rate or Hungarian inflation figure as fact; uses verify with the official page and/or a clearly labelled assumption the user can change",
+        "Asks the user to paste the official rate (e.g. from the central bank) or their own rate",
+        "Still builds the plan structure from the user's numbers (stipend, family money, rent) without inventing other costs (marks them missing)",
+        "Telegram exchange: never says the person is licensed or legit; licence not checked, verdict at best 'Suspicious', with the unofficial-exchange scam warning",
+        "First line is one single next action; footer says educational only / not financial advice"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Mesajlarım tez bitir, qısa yaz. Təqaüd 450 AZN, kirayə 250, yemək 120, nəqliyyat 30, telefon 15. Büdcə qur.",
+      "expectations": [
+        "Entire answer in Azerbaijani",
+        "First line is one single next action",
+        "Plan block with correct maths: needs 250 + 120 + 30 + 15 = 415 AZN, available 450 − 415 = 35 AZN split into savings and/or wants, LEFT ≥ 0",
+        "Weekly limit shown with its calculation (e.g. (120 + 30) ÷ 4.3 ≈ 35 AZN, plus any small wants)",
+        "Does not output every extra section (lean months, emergency-fund timeline, sheet) in full; offers more with a one-line 'daha?'-style offer",
+        "Footer says educational only / not financial advice"
+      ]
     }
   ]
 }

@@ -35,6 +35,8 @@ Where it stops: educational only, not financial advice. No investments, loans or
 
 **Compatibility note:** Works on any agent. Official exchange rates, inflation and tax pages need web search; without it, the skill uses your numbers or labelled assumptions.
 
+**Plan compatibility:** works on Free, Pro, Max and Team plans. Without web search it gives no rates from memory: paste the official rate or use your own. Short on messages? Say so and it answers one part at a time.
+
 **Needs access to:** web search / web fetch (optional).
 
 **Limitations / FAQ:**
